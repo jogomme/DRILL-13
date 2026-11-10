@@ -7,6 +7,7 @@ from transitions import Machine
 
 import game_world
 from ball import Ball
+import item_state
 
 
 class Boy:
@@ -47,6 +48,8 @@ class Boy:
         self.frame = 0
 
     def fire_ball(self):
+        if item_state.selected_ball == 0:
+            return
         ball = Ball(self.x, self.y, self.face_dir * 10)
         game_world.add_oject(ball)
 

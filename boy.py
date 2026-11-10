@@ -50,7 +50,10 @@ class Boy:
     def fire_ball(self):
         if item_state.selected_ball == 0:
             return
-        ball = Ball(self.x, self.y, self.face_dir * 10)
+        ball = Ball(
+            self.x, self.y, self.face_dir * 10,
+            size=item_state.selected_ball
+        )
         game_world.add_oject(ball)
 
     def handle_event(self, event):
